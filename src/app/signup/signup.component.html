@@ -1,0 +1,211 @@
+<!-- <form id="onSignUpSubmit" [formGroup]="signupForm"] (ngSubmit)="onSignUpSubmit()"> -->
+<div #signUp id="signUp">
+  <h3 class="text-center text-white pt-5">SignUp form</h3>
+  <div class="container">
+    <div id="signUp-row" class="row justify-content-center align-items-center">
+      <div id="signUp-column" class="col-md-6">
+        <div id="signUp-box" class="col-md-12">
+          <form
+            id="signUp-form"
+            class="form"
+            [formGroup]="signupForm"
+            (ngSubmit)="onSignUpSubmit()"  
+            
+          >
+            <h3 class="text-center text-info">signUp</h3>
+
+            <div class="form-group">
+              <label for="UserName" class="text-info"
+                >Username<span class="text-danger">*</span>:</label
+              ><br />
+              <input
+                type="text"
+                name="username"
+                formControlName="username"
+                id="username"
+                class="form-control"
+              />
+              <!-- <div
+                *ngIf="f.username.touched && f.username.errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f.username.errors.required">
+                  Full Name is required
+                </div>
+                <div *ngIf="f.username.errors.pattern">
+                  Full Name only contains alphabets
+                </div>
+              </div> -->
+
+              <span
+                *ngIf="
+                  !signupForm.get('username').valid &&
+                  signupForm.get('username').touched
+                "
+                class="help-block"
+              >
+                
+                <span *ngIf="signupForm.get('username').errors['required']">
+                  This field is required!
+                </span>
+                <span
+                  *ngIf="
+                    !signupForm.get('username').pattern &&
+                    signupForm.get('username').touched &&
+                    !signupForm.get('username').errors['required']
+                  "
+                >
+                  This name is invalid
+                </span>
+              </span>
+            </div>
+            <div class="form-group">
+              <label for="Email" class="text-info"
+                >Email<span class="text-danger">*</span>:</label
+              ><br />
+              <input
+                type="email"
+                name="email"
+                formControlName="email"
+                id="email"
+                class="form-control"
+              />
+              <span
+                *ngIf="
+                  !signupForm.get('email').valid &&
+                  signupForm.get('email').touched
+                "
+                class="help-block"
+              >
+                
+                <span *ngIf="signupForm.get('email').errors['required']">
+                  This field is required!
+                </span>
+                <span
+                  *ngIf="
+                    !signupForm.get('email').pattern &&
+                    signupForm.get('email').touched &&
+                    !signupForm.get('email').errors['required']
+                  "
+                >
+                  This email is invalid and end with @prominentpixel.com
+                </span>
+              </span>
+            </div>
+            <div class="form-group">
+              <label for="fullname" class="text-info"
+                >Full Name<span class="text-danger">*</span>:</label
+              ><br />
+              <input
+                type="text"
+                name="fullname"
+                formControlName="fullname"
+                id="fullname"
+                class="form-control"
+              />
+              <span
+                *ngIf="
+                  !signupForm.get('fullname').valid &&
+                  signupForm.get('fullname').touched
+                "
+                class="help-block"
+              >
+                
+                <span *ngIf="signupForm.get('fullname').errors['required']">
+                  This field is required!
+                </span>
+                <span
+                  *ngIf="
+                    !signupForm.get('fullname').pattern &&
+                    signupForm.get('fullname').touched &&
+                    !signupForm.get('fullname').errors['required']
+                  "
+                >
+                  This fullname only contains Alphabets 
+                </span>
+              </span>
+            </div>
+
+            <div class="form-group">
+              <label for="password" class="text-info"
+                >Password<span class="text-danger">*</span>:</label
+              ><br />
+              <input matInput
+                type="text"
+                name="password"
+                formControlName="password"
+                id="password"
+                class="form-control"
+              />
+              <span
+                *ngIf="
+                  !signupForm.get('password').valid &&
+                  signupForm.get('password').touched
+                "
+                class="help-block"
+              >
+                
+                <span *ngIf="signupForm.get('password').errors['required']">
+                  This field is required!
+                </span>
+                <span
+                  *ngIf="
+                    !signupForm.get('password').pattern &&
+                    signupForm.get('password').touched &&
+                    !signupForm.get('password').errors['required']
+                  "
+                >
+                  This password is invalid beacuse It must have capital, small and special char  and also a number and 8 number.
+                </span>
+              </span>
+            </div>
+
+            <div class="form-group">
+              <label for="password" class="text-info"
+                >Confirm Password<span class="text-danger">*</span>:</label
+              ><br />
+              <input matInput
+                type="text"
+                name="confirmpassword"
+                id="confirmpassword"
+                formControlName="confirmpassword"
+                class="form-control" 
+              />
+
+              <span
+                *ngIf="
+                  !signupForm.get('confirmpassword').valid &&
+                  signupForm.get('confirmpassword').touched
+                "
+                class="help-block"
+              >
+                
+                <span *ngIf="signupForm.get('confirmpassword').errors['required']">
+                  This field is required!
+                </span>
+                <span
+                  *ngIf="
+                    !signupForm.get('confirmpassword').pattern &&
+                    signupForm.get('confirmpassword').touched &&
+                    !signupForm.get('confirmpassword').errors['required']
+                  "
+                >
+                  This confirmpassword is not match with password
+                </span>
+                
+              </span>
+            </div>
+            <br>
+            <div  class="text-center">
+              <button class="btn btn-success" [disabled]="!signupForm.valid">
+                Register here
+              </button>
+              <br>
+              <a routerLink="/login">Already have account</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,66 @@
+<!-- <div class="search-results-container" 
+style="height: 70vh; overflow: scroll"
+infiniteScroll
+[infiniteScrollDistance]="0"
+[infiniteScrollThrottle]="50"
+[scrollWindow]="false"
+    (scrolled)="onScrollDown($event)" 
+    > -->
+    
+    
+<div style="background-color: #17a2b8; padding-bottom: 50px;" >
+<div class="container" style="padding-top: 25px; background-color: #17a2b8;">
+  <a class="btn btn btn-warning  justify-content-center" style="text-align: center;" routerLink="new">New Post</a>
+  <div class="row d-flex justify-content-center">
+    
+    <div
+  style="height: 50vh; overflow: scroll; width: 70%;"
+  >
+
+      <a class="list-group" style="height: auto;" *ngFor="let i of blogs;let i1 = index" >
+        <div class="list-group-item list-group-item-action" >
+          <div (click)="blogShowDetail(i.id)">
+
+            <h6 class="mb-1">{{i.title}}</h6>
+          </div>
+          <div (click)="blogShowDetail(i.id)" style="cursor: pointer; ">
+            
+            <h2 class="mb-1" [innerHTML]="i.description"> </h2>
+          </div>
+          <div>
+            <button class="btn btn-danger" (click)="deleteBlog(i1)">delete</button>
+          </div>
+          <small></small>
+        </div>
+     </a>
+     </div>
+  </div>
+</div>    
+</div>
+<div class="container" style="padding-top: 25px; background-color: #17a2b8;">
+  <div class="row d-flex justify-content-center">
+    
+<div class="search-results" 
+    infinite-scroll 
+    (scrolled)="onScrollDown($event)" 
+    (scrolledUp)="onScrollUp($event)" style="height: 50vh; overflow: scroll; width: 70%;">
+    <a class="list-group" style="height: auto;" *ngFor="let i of blogs;let i1 = index" >
+      <div class="list-group-item list-group-item-action" >
+        <div (click)="blogShowDetail(i.id)">
+
+          <h6 class="mb-1">{{i.title}}</h6>
+        </div>
+        <div (click)="blogShowDetail(i.id)" style="cursor: pointer; ">
+          
+          <h2 class="mb-1" [innerHTML]="i.description"> </h2>
+        </div>
+        <div>
+          <button class="btn btn-danger" (click)="deleteBlog(i1)">delete</button>
+        </div>
+        <small></small>
+      </div>
+   </a>
+</div>
+
+</div>
+</div>

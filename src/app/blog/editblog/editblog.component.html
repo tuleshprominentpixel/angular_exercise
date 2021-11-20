@@ -1,0 +1,137 @@
+<p>editblog works!</p>
+<div #blog id="blog">
+    <!-- <h3 class="text-center text-white pt-5">blog form</h3> -->
+    <div class="container">
+      <div id="blog-row" class="justify-content-center">
+        <div id="blog-column" class="col-md-18">
+          <div id="blog-box" class="col-md-12">
+            <form
+              id="blog-form"
+              class="form" 
+              (ngSubmit)="onEditBlogSubmit()"
+              #f="ngForm"
+            >
+              <h3 class="text-center text-info">Blog Form</h3>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="title">Title</label>
+                    <input
+                      type="text"
+                      id="title"
+                      class="form-control"
+                      ngModel={{blogCurrent.title}}
+                      name="title"
+                      required
+                      #title
+                    />
+                  </div>
+  
+                  <div class="form-group">
+                    <label for="description">Description</label>
+                    <!-- <input type="text" id="description" class="form-control"      ngModel name="description" required #description/> -->
+                    <ckeditor
+                      [editor]="Editor"
+                      data="Hello, world!"
+                      id="description"
+                      name="description"
+                      ngModel={{blogCurrent.description}}
+                      #description="ngModel"
+                    ></ckeditor>
+  
+                    <!-- <ckeditor [editor]="Editor" id="description" name="description"></ckeditor> -->
+                  </div>
+  
+                  <div class="form-group">
+                    <label for="imageUrl">Image URL</label>
+                    <input
+                      type="text"
+                      id="imageUrl"
+                      class="form-control"
+                      name="imageUrl"
+                      ngModel="{{blogCurrent.imageUrl}}"
+                      required
+                      #imageUrl
+                    />
+                  </div>
+  
+                  <!-- <ng-multiselect-dropdown
+                    [placeholder]="'custom placeholder'"
+                    [settings]="dropdownSettings"
+                    [data]="dropdownList"
+                    (onSelect)="onItemSelect($event)"
+                    (onSelectAll)="onSelectAll($event)"
+                    ngModel
+                    name="language"
+                    #language
+                  >
+                  </ng-multiselect-dropdown> -->
+  
+                  <ng-multiselect-dropdown
+                  [placeholder]="'custom placeholder'"
+                  [settings]="dropdownSettings"
+                  [data]="dropdownList"
+                  (onSelect)="onItemSelect($event)"
+                  (onSelectAll)="onSelectAll($event)"
+                  [(ngModel)]="selectedItems"
+                  [data]="dropdownList"
+                  name="language"
+                  #language
+                >
+                </ng-multiselect-dropdown>
+
+                  <div class="form-group">
+                    <label for="date">Date</label>
+                    <div class="input-group">
+                      <input
+                        class="form-control"
+                        placeholder="yyyy-mm-dd"
+                        name="date"
+                        [ngModel]="date1 | date:'yyyy-MM-dd'"
+                        
+                        #date
+                        type="date"
+                      />
+                    </div>
+                  </div>
+  
+                  <div class="form-group">
+                    <label for="author">Author</label>
+                    <input
+                      type="text"
+                      id="author"
+                      class="form-control"
+                      name="author"
+                      ngModel={{blogCurrent.author}}
+                      readonly
+                    />
+                    <input
+                      type="hidden"
+                      id="id"
+                      class="form-control"
+                      name="id"
+                      ngModel={{blogCurrent.id}}
+                      readonly
+                    />
+                  </div>
+  
+                  <div class="text-center">
+                    <button class="btn btn-success">Update Blog</button>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <img
+                    [src]="imageUrl.value"
+                    alt=""
+                    style="max-width: 500px; max-height: 500px"
+                  />
+                </div>
+              </div>
+            </form>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

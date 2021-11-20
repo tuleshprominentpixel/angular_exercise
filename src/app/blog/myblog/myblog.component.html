@@ -1,0 +1,48 @@
+<!--<p>myblog works!</p>
+<div class="col-lg-3 col-md-3 col-sm-3" *ngIf="myblognumber">
+    <div class="cuadro_intro_hover " style="background-color:#cccccc;" *ngFor="let myfinalblog of myfinalblog;let i1 = index">
+        <p style="text-align:center; margin-top:20px;">
+            <img src="{{myfinalblog.imageUrl}}" class="img-responsive" alt="">
+             
+        </p>
+        <div class="caption">
+            <div class="blur"></div>
+            <div class="caption-text">
+                <h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:10px;">{{myfinalblog.title}}</h3>
+                <p>{{myfinalblog.description}}</p>
+                <a class=" btn btn-default" href="#"><span class="glyphicon glyphicon-plus"> Edit</span></a>
+            </div>
+        </div>
+    </div>
+
+</div>-->
+<div style="background-color: #17a2b8; padding-bottom: 50px;" >
+<div class="container">
+    <div class="text-center mb-5" *ngIf="(myfinalblog.length)>0; else elseBlock">
+        <h2 class="text " >Most recent our blog</h2>
+        <!-- <h2 class="display-20 display-md-18 display-lg-16">Most recent our blog</h2> -->
+    </div>
+    <ng-template #elseBlock>There no post by user.</ng-template>
+
+    <div class="row"  *ngIf="myblognumber">
+        <div class="col-lg-4 col-md-6 mb-2-6" *ngFor="let myfinalblog of myfinalblog;let i1 = index">
+            <article class="card card-style2">
+                <div class="card-img">
+                    <img class="rounded-top" src="{{myfinalblog.imageUrl}}" alt="..." style="max-width:350px; max-height:280px">
+                    <div class="date">{{myfinalblog.date}}</div>
+                </div>
+                <div class="card-body">
+                    <h3 class="h5"><a href="#!">{{myfinalblog.title}}</a></h3>
+                    <p class="display-30" [innerHTML]="myfinalblog.description"></p>
+                    <a (click)="onDetail(myfinalblog.id)" style="color:blue; cursor: pointer;">read more</a><br>
+                </div>
+                <div class="card-footer">
+                    <ul>
+                        <button class="btn btn-primary" (click)="onEdit(myfinalblog.id)">Edit</button> <button class="btn btn-danger" (click)="onDelete(myfinalblog.id)">Delete</button>
+                    </ul>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+</div>

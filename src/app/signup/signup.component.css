@@ -1,0 +1,23 @@
+body, #signUp  {
+    margin: 0;
+    padding: 0;
+    background-color: #17a2b8;
+    height: 130vh;
+  }
+  .container #signUp-row #signUp-column #signUp-box {
+    margin-top: 20px;
+    max-width: 560px;
+    height: 620px;
+    border: 1px solid #9C9C9C;
+    background-color: #EAEAEA;
+  }
+  #signUp .container #signUp-row #signUp-column #signUp-box #signUp-form {
+    padding: 20px;
+  }
+  #signUp .container #signUp-row #signUp-column #signUp-box #signUp-form #register-link {
+    margin-top: -85px;
+  }
+
+  span{
+    color: red;
+  }

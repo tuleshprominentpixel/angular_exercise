@@ -1,0 +1,23 @@
+body, #blogdetail  {
+    margin: 0;
+    padding: 0;
+    background-color: #17a2b8;
+    height: 130vh;
+  }
+  .container #blog-row #blog-column #blog-box {
+    margin-top: 20px;
+    /* max-width: 560px; */
+    height: 620px;
+    border: 1px solid #9C9C9C;
+    background-color: #EAEAEA;
+  }
+  #blog .container #blog-row #blog-column #blog-box #blog-form {
+    padding: 20px;
+  }
+  #blog .container #blog-row #blog-column #blog-box #blog-form #register-link {
+    margin-top: -85px;
+  }
+
+  span{
+    color: red;
+  }

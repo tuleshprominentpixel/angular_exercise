@@ -1,0 +1,56 @@
+<header>
+  <!--- Navbar --->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <div class="row"></div>
+      <div class="col-md-6">
+        <!-- <a class="navbar-brand text-white" href="#"
+          ><i class="fa fa-graduation-cap fa-lg mr-2"></i>BLOG</a
+        > -->
+       
+        <a class="nav-link" routerLink="/"
+          ><i class="fa fa-home fa-fw mr-1"></i>Home</a>
+        <a class="nav-link" [routerLink]="['myblog']"
+          ><i class="fa fa-home fa-fw mr-1"></i>My blog</a>
+        <!-- <div class="collapse navbar-collapse" id="nvbCollapse">
+          <ul class="navbar-nav ml-auto">
+            <li class="">
+              <a class="nav-link" href="#"
+                ><i class="fa fa-home fa-fw mr-1"></i>Home</a
+              >
+            </li>
+            <li class="nav-item active pl-1">
+						<a class="nav-link" href="#"><i class="fa fa-th-list fa-fw mr-1"></i>Blog</a>
+					</li>
+          </ul>
+        </div> -->
+      </div>
+      <div class="col-md-6">
+        <div class="collapse navbar-collapse" style="float:right" id="nvbCollapse">
+         
+            <button
+              class="btn btn-success"
+              [routerLink]="['/signup']"
+              type="button" style="float: right;"
+              *ngIf="!loginUserName">
+              SignUp/Login
+            </button>
+            <!-- <li class="nav-item active pl-1">
+                            <a class="nav-link" href="#"><i class="fa fa-th-list fa-fw mr-1"></i>Blog</a>
+                        </li> -->
+            <h5 *ngIf="loginUserName">welcome,{{loginUserName}}
+              <button
+              class="btn btn-success"
+              (click)="logOut()"
+              type="button" style="float: right;"
+              >
+              Log out
+            </button>
+            </h5>
+           
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!--# Navbar #-->
+</header>

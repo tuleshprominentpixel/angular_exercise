@@ -1,0 +1,60 @@
+body, #blog  {
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    background-color: #17a2b8;
+    height: auto;
+    width: auto;
+  }
+  .container #blog-row #blog-column #blog-box {
+    margin-top: 20px;
+    max-width: auto;
+    height: auto;
+    border: 1px solid #9C9C9C;
+    background-color: #EAEAEA;
+  }
+  #blog .container #blog-row #blog-column #blog-box #blog-form {
+    padding: 20px;
+  }
+  #blog .container #blog-row #blog-column #blog-box #blog-form #register-link {
+    margin-top: -85px;
+  }
+
+  span{
+    color: red;
+  }
+
+
+  .multiselect {
+    width: 200px;
+  }
+  
+  .selectBox {
+    position: relative;
+  }
+  
+  .selectBox select {
+    width: 100%;
+    font-weight: bold;
+  }
+  
+  .overSelect {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+  
+  #checkboxes {
+    display: none;
+    border: 1px #dadada solid;
+  }
+  
+  #checkboxes label {
+    display: block;
+  }
+  
+  #checkboxes label:hover {
+    background-color: #1e90ff;
+  }

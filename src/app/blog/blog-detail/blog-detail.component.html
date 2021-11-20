@@ -1,0 +1,32 @@
+<div style="background-color: #17a2b8; padding-bottom: 50px;" >
+<div class="container container-fuild" #blogdetail style="background-color: #17a2b8; padding-top: 20px;">
+    <div class="row" >
+        <!-- Blog entries-->
+        <div class="col-lg-12">
+            <a class="btn  btn-warning" routerLink="../">Back</a>
+            <!-- Featured blog post-->
+            <div class="card mb-4 ">
+                <h3 class="float-center" style="text-align: center;">{{blog.title}}</h3>
+                <div class="d-flex justify-content-center">
+                <a href="{{blog.imageUrl}}" target="_blank"><img class="card-img-top justify-content-center"  src="{{blog.imageUrl}}" alt="..." style="width: 500px; height: 400px;"/></a>
+                </div>
+                <div class="card-body">
+                    <a class="btn  btn-warning" routerLink="edit">Edit</a>
+                    <div class="small text-muted">Publish On:{{blog.date}}</div>
+                    <div class="small text-muted">Auther :{{this.blog.author}}</div>
+                    <h2 class="card-title">Featured Post Title</h2>
+                    <p class="card-text" [innerHTML]="blog.description"></p>
+                    
+                    <a class="card-text" *ngFor="let tags of blog.language">{{tags.item_text}},</a>
+                    <br>
+                    <div class="" style="float: left;">
+                        <a class="btn btn-primary"  (click)="onPreviousBlog()">Previous Blog</a>
+                    </div>
+                    <div class="" style="float: right;">
+                        <a class="btn btn-primary"  (click)="onNextBlog()">Next Blog →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
